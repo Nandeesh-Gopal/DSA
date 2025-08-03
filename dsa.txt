@@ -1,0 +1,10 @@
+| Topic         | Key Concepts                          |
+| ------------- | ------------------------------------- |
+| Arrays        | Traversal, insert/delete, prefix sums |
+| Strings       | Palindromes, substrings, frequency    |
+| Hashing       | Maps, Sets, Frequency counters        |
+| Recursion     | Base case, recursive calls            |
+| Searching     | Linear & Binary Search                |
+| Sorting       | Bubble, Selection, Merge, Quick       |
+| Stack / Queue | Push/pop, LIFO/FIFO                   |
+| Linked List   | Singly, doubly, reversing             |
