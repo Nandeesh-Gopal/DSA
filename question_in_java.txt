@@ -1,0 +1,2 @@
+how many packages are there in java?
+map vs hashmap?

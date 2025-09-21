@@ -1,0 +1,22 @@
+import java.util.*;
+class solution{
+    public Map<Integer,Integer> memo=new HashMap<>();
+    public int fib(int n){
+        if(n<=1){
+            return n;
+        }
+        if(memo.containsKey(n)){
+            return memo.get(n);
+        }
+        int ans = fib(n-1)+fib(n-2);
+        memo.put(n,ans);
+        return ans;
+    }
+}
+class Main {
+    public static void main(String[] args) {
+        solution s=new solution();
+        System.out.println(s.fib(6));
+        
+    }
+}
