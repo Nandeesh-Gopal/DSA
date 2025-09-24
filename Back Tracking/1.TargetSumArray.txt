@@ -1,0 +1,21 @@
+import java.util.*;
+public class targetSubarray{
+    public static void main(String[] args){
+        int[]arr={1,2,3};
+        int target=3;
+        backtrack(arr,target,0,new ArrayList<>(),0);
+    }
+    public static void backtrack(int[]arr,int target,int index,List<Integer> subArray,int total){
+        if(total==target){
+            System.out.println(subArray);
+            return;
+        }
+        if(total>target || index==arr.length){
+            return;
+        }
+        subArray.add(arr[index]);
+        backtrack(arr,target,index,subArray,total+arr[index]);
+        subArray.remove(subArray.size()-1);
+        backtrack(arr,target,index+1,subArray,total);
+    }
+}
