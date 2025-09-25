@@ -1,2 +1,7 @@
 how many packages are there in java?
 map vs hashmap?
+why java is popular?
+is Integer is a key work in java?
+why java uses Integer instead of int in map declaration?
+what is static?
+pupose of static
