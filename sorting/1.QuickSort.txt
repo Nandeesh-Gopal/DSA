@@ -1,0 +1,35 @@
+class Main {
+    public static void main(String[] args) {
+        int [] arr ={102,4,5,2,3,43,2,4522,532,3,2};
+        quicksort(arr,0,arr.length-1);
+        for(int n:arr){
+         System.out.print(n+" ");
+        }
+    }
+    public static void quicksort(int[] arr,int start,int end){
+        if(start<end){
+        int pivot=partition(arr,start,end);
+        quicksort(arr,start,pivot-1);
+        quicksort(arr,pivot+1,end);}
+    }
+    public static int partition(int []arr,int start,int end){
+        int ori=start;
+        int pivot=arr[start];
+        while(start<end){
+            while(start<=end && arr[start]<=pivot){
+                start++;
+            }
+            while(start<=end && arr[end]>pivot){
+                end--;
+            }
+            if(start<end){
+                int temp=arr[end];
+                arr[end]=arr[start];
+                arr[start]=temp;
+            }
+        }
+        arr[ori]=arr[end];
+        arr[end]=pivot;
+        return end;
+    }
+}
