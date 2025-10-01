@@ -5,3 +5,4 @@ is Integer is a key work in java?
 why java uses Integer instead of int in map declaration?
 what is static?
 pupose of static
+what is string pool
