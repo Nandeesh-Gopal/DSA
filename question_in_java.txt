@@ -7,3 +7,4 @@ what is static?
 pupose of static
 what is string pool
 what is string buffer
+what is string builder?
