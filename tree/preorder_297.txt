@@ -1,0 +1,49 @@
+import java.util.*;
+class node{
+    int data;
+    node right;
+    node left;
+    node (int data){
+        this.data =data;
+        right=null;
+        left=null;
+    }
+}
+class Main {
+    public static void main(String[] args) {
+        node root =new node(1);
+        root.left =new node(2);
+        root.right= new node(3);
+        root.right.right=new node(5);
+        root.right.left=new node(4);
+        StringBuilder sb=new StringBuilder();
+        preorder(root,sb);
+    }
+    public static void preorder(node node,StringBuilder sb){
+        if(node == null){
+            sb.append("null,");
+            return;
+        }
+        System.out.println(node.data);
+        sb.append(Integer.toString(node.data)+",");
+        preorder(node.left,sb);
+        preorder(node.right,sb);
+    }
+    public static void print(String data){
+        String[] arr = data.split(",");
+        List<String> l=new LinkedList(Arrays.asList(arr));
+        node ans= tree(l);
+        preorder(ans,new StringBuilder());
+    }
+    public static node tree(List<String> l){
+        if(l.get(0).equals("null")){
+            l.remove(0);
+            return null;
+        }
+        node n=new node(Integer.parseInt(l.get(0)));
+        l.remove(0);
+        n.left=tree(l);
+        n.right=tree(l);
+        return n;
+    }
+}
