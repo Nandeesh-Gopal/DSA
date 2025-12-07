@@ -1,0 +1,15 @@
+// User function Template for Java
+class Solution {
+    static boolean armstrongNumber(int n) {
+        int digits=String.valueOf(n).length();
+        int ori=n;
+        int sum=0;
+        while(n>0){
+            int rem=n%10;
+            sum += Math.pow(rem,digits);
+            n=n/10;
+        }
+        return (sum==ori)? true:false;
+        
+    }
+}

@@ -1,0 +1,12 @@
+
+class Main {
+    public static void main(String[] args) {
+        String s="hello  java string";
+        System.out.println(count_words(s));
+    }
+    public static int count_words(String s){
+        if(s.length()==0)return 0;
+        String[] sa=s.split("\\s+");
+        return sa.length;
+    }
+}

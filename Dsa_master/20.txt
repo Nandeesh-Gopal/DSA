@@ -1,0 +1,17 @@
+// // User function Template for Java
+
+class Solution {
+    public void rotate(int[] arr) {
+        reverse(arr,0,arr.length-1);
+        reverse(arr,1,arr.length-1);
+    }
+    public void reverse(int[]a,int s,int e){
+        while(s<e){
+            int temp=a[s];
+            a[s]=a[e];
+            a[e]=temp;
+            s++;
+            e--;
+        }
+    }
+}

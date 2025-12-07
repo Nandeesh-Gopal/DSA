@@ -1,0 +1,21 @@
+class Solution {
+    int thirdLargest(int a[]) {
+        int tlar=Integer.MIN_VALUE,slar=Integer.MIN_VALUE,lar=Integer.MIN_VALUE;
+        for(int i=0;i<a.length;i++){
+            if(a[i]>=lar){
+                tlar=slar;
+                slar=lar;
+                lar=a[i];
+            }
+            else if(a[i]>=slar){
+                tlar=slar;
+                slar=a[i];
+            }
+            else if(a[i]>=tlar){
+                tlar=a[i];
+            }
+        }
+        return tlar;
+        
+    }
+}

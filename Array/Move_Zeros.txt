@@ -1,0 +1,22 @@
+class Main {
+    public static void main(String[] args) {
+        int[]a={1,0,0,4,0,6,7,8};
+        move_zeros(a);
+        for(int x:a){
+            System.out.print(x+" ");
+        }
+    }
+    public static void move_zeros(int[]a){
+        int index=0;
+        for(int i=0;i<a.length;i++){
+            if(a[i] != 0){
+                a[index]=a[i];
+                index++;
+            }
+        }
+        for(int i=index;i<a.length;i++){
+            a[index]=0;
+            index++;
+        }
+    }
+}

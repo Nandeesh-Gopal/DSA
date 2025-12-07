@@ -1,0 +1,21 @@
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Collections;
+class Main {
+    public static void main(String[] args) {
+        int[]a={7, 1, 5, 3, 6, 4};
+        System.out.println("Max profit "+max_profit(a));
+    }
+    public static int max_profit(int[] a){
+        int min_prize=a[0];
+        int max_profit=0;
+        for(int i=1;i<a.length;i++){
+            int profit=a[i]-min_prize;
+            min_prize=Math.min(min_prize,a[i]);
+            max_profit=Math.max(max_profit,profit);
+            
+        }
+        return max_profit;
+    }
+
+}

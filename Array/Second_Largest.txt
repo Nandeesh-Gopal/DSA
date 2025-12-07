@@ -1,0 +1,20 @@
+class Main {
+    public static void main(String[] args) {
+        int[] a={1,2,30,4,6,7,8,9,100,-1};
+        System.out.println("Second Largest element is "+Sec_large(a));
+    }
+    public static int Sec_large(int[] a){
+        int max=Integer.MIN_VALUE;
+        int sec=Integer.MIN_VALUE;
+        for(int i=0;i<a.length;i++){
+            if(max<a[i]){
+                sec=max;
+                max=a[i];
+            }
+            else if(a[i]>sec&& a[i]!=max){
+                sec=a[i];
+            }
+        }
+        return sec;
+    }
+}

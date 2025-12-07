@@ -1,0 +1,16 @@
+
+class Main {
+    public static void main(String[] args) {
+        String s="madam1234567";
+        System.out.println(count_numbers(s));
+    }
+    public static int count_numbers(String s){
+        int count =0;
+        for(int i=0;i<s.length();i++){
+            if(Character.isDigit(s.charAt(i))){
+                count++;
+            }
+        }
+        return count;
+    }
+}

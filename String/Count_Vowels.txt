@@ -1,0 +1,16 @@
+class Main {
+    public static void main(String[] args) {
+        String s="hello world";
+        System.out.println(count_vowel(s));
+    }
+    public static int count_vowel(String s){
+        int count=0;
+        String vow ="AEIOUaeiou";
+        for(int i=0;i<s.length();i++){
+            if(vow.indexOf(s.charAt(i))!=-1){
+                count++;
+            }
+        }
+        return count;
+    }
+}

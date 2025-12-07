@@ -1,0 +1,27 @@
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Node n=new Node(5);
+        n.left=new Node(1);
+        n.right=new Node(4);
+        n.right.left=new Node(3);
+        n.right.right=new Node(6);
+        
+        System.out.println("Sum of element in the tree: "+sumOfNodes(n));
+    }
+    public static int sumOfNodes(Node node){
+        if(node==null) return 0;
+        int leftsum = sumOfNodes(node.left);
+        int rightsum= sumOfNodes(node.right);
+        return node.data+leftsum+rightsum;
+    }
+    
+    
+}class Node{
+    int data;
+    Node left;
+    Node right;
+    Node(int data){
+        this.data=data;
+    }
+}

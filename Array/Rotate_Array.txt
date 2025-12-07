@@ -1,0 +1,37 @@
+class Main {
+    public static void main(String[] args) {
+        int[]a={1,2,3,4,5,6,7,8};
+        rotate_R(a,3);
+        for(int x:a){
+            System.out.print(x+" ");
+        }
+        System.out.println();
+        rotate_L(a,5);
+        for(int x:a){
+            System.out.print(x+" ");
+        }
+    }
+    public static void rotate_R(int[] a,int k){
+        k=k%a.length;
+        reverse(a,0,a.length-1);
+        reverse(a,0,k-1);
+        reverse(a,k,a.length-1);
+        
+    }
+    public static void reverse(int[] a, int l,int r){
+        while(l<r){
+            int temp=a[l];
+            a[l]=a[r];
+            a[r]=temp;
+            l++;
+            r--;
+        }
+    }
+    public static void rotate_L(int[] a,int k){
+        k=k%a.length;
+        reverse(a,0,k-1);
+        reverse(a,k,a.length-1);
+        reverse(a,0,a.length-1);
+    }
+    
+}

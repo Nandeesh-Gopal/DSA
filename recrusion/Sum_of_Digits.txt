@@ -1,0 +1,13 @@
+class Main {
+    public static void main(String[] args) {
+        System.out.println(sum_of_digits(9999999));
+    }
+    public static int sum_of_digits(int n){
+        if(n<10){
+            return n;
+        }
+        int r=n%10;
+        n=n/10;
+        return r+sum_of_digits(n);
+    }
+}

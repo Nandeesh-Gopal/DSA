@@ -1,0 +1,39 @@
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Node n=new Node(5);
+        n.left=new Node(1);
+        n.right=new Node(4);
+        n.right.left=new Node(3);
+        n.right.right=new Node(6);
+        n.right.right.right=new Node(8);
+        n.right.right.right.right=new Node(8);
+
+        System.out.println("Depth of tree (BFS): "+depth(n));
+    }
+    public static int depth(Node node){
+        if(node==null)return 0;
+        Queue<Node> q= new LinkedList<>();
+        q.add(node);
+        int depth=0;
+        while(!q.isEmpty()){
+            int size=q.size();
+            for(int i=0;i<size;i++){
+                Node n=q.poll();
+                System.out.println("Node "+n.data+" is depth of "+depth);
+                if(n.left!=null) q.add(n.left);
+                if(n.right!=null) q.add(n.right);
+            }
+            depth++;
+        }
+        return depth;
+    }
+}
+class Node{
+    int data;
+    Node left;
+    Node right;
+    Node(int data){
+        this.data=data;
+    }
+}

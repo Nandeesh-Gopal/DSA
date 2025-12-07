@@ -1,0 +1,11 @@
+class Solution {
+    long missingNum(int arr[]) {
+        int n=arr.length+1;
+        long totalsum= (long)n*(n+1)/2;
+        long actualsum=0;
+        for(int x:arr){
+            actualsum +=x;
+        }
+        return (long) totalsum-actualsum;
+    }
+}

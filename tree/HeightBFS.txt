@@ -1,0 +1,39 @@
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Node n=new Node(5);
+        n.left=new Node(1);
+        n.right=new Node(4);
+        n.right.left=new Node(3);
+        n.right.right=new Node(6);
+        n.right.right.right=new Node(8);
+        n.right.right.right.right=new Node(8);
+
+        System.out.println("Height of tree (BFS): "+height(n));
+    }
+    public static int height(Node node){
+        if(node==null)return 0;
+        Queue<Node> q= new LinkedList<>();
+        q.add(node);
+        int height=0;
+        while(!q.isEmpty()){
+            int size=q.size();
+            for(int i=0;i<size;i++){
+                Node n=q.poll();
+                if(n.left!=null) q.add(n.left);
+                if(n.right!=null) q.add(n.right);
+            }
+            height++;
+            
+        }
+        return height;
+    }
+}
+class Node{
+    int data;
+    Node left;
+    Node right;
+    Node(int data){
+        this.data=data;
+    }
+}

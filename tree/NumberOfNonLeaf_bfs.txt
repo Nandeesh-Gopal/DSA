@@ -1,0 +1,36 @@
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Node n=new Node(5);
+        n.left=new Node(1);
+        n.right=new Node(4);
+        n.right.left=new Node(3);
+        n.right.right=new Node(6);
+
+        System.out.println("Number of node except leaf (BFS): "+NonLeaf(n));
+    }
+    public static int NonLeaf(Node node){
+        if(node==null)return 0;
+        Queue<Node> q= new LinkedList<>();
+        q.add(node);
+        int count=0;
+        while(!q.isEmpty()){
+            Node n=q.poll();
+            if(n.left!=null&& n.right!=null){
+                count++;
+            }
+            if(n.left!=null) q.add(n.left);
+            if(n.right!=null) q.add(n.right);
+        }
+        return count;
+    }
+    
+    
+}class Node{
+    int data;
+    Node left;
+    Node right;
+    Node(int data){
+        this.data=data;
+    }
+}
