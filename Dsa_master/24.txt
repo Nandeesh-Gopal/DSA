@@ -1,0 +1,15 @@
+import java.util.ArrayList;
+import java.util.List;
+class Solution {
+    public List<Integer> frequencyCount(int[] arr) {
+        int[] freq=new int[arr.length];
+        for(int x:arr){
+            freq[x-1]++;
+        }
+        List<Integer> l=new ArrayList<>();
+        for(int x:freq){
+            l.add(x);
+        }
+        return l;
+    }
+}
